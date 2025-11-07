@@ -84,10 +84,6 @@
 
 
         
-        <!-- AQUI -->
-        <img src="ada4.png" class="ada ada4 no_select">
-        <div class="trigger-ada trigger no_select" style=" height: 5800px;"></div>
-
 
 
         
@@ -430,41 +426,6 @@ new WOW().init();
 
 
 
-
-
-
-
-
-gsap.registerPlugin(ScrollTrigger);
-
-
-
-
-// ANIMACIÓN PARA .ada4 (será más rápida - 500px)
-gsap.set(".ada4", { opacity: 0 });
-ScrollTrigger.create({
-  trigger: ".trigger-ada",
-  start: "top 80%",
-  end: "bottom 20%",
-  onEnter: () => gsap.to(".ada4", { opacity: 1, duration: 0.3 }),
-  onLeave: () => gsap.to(".ada4", { opacity: 0, duration: 0.3 }),
-  onEnterBack: () => gsap.to(".ada4", { opacity: 1, duration: 0.3 }),
-  onLeaveBack: () => gsap.to(".ada4", { opacity: 0, duration: 0.3 })
-});
-gsap.to(".ada4", {
-  y: -150,
-  scale: 1.2,
-  scrollTrigger: {
-    trigger: ".trigger-ada",
-    start: "top 80%", 
-    end: "bottom 20%", // Usa la altura real del trigger (500px)
-    scrub: true,
-    onUpdate: self => {
-      const zigzag = Math.sin(self.progress * 8) * 40;
-      gsap.set(".ada4", { x: zigzag });
-    }
-  }
-});
 
 
 
